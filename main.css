@@ -1,88 +1,58 @@
-/* =====================
-   Mobile-First Stylesheet
-   Default: mobile view
-   Adjustable breakpoint below
-   ===================== */
+/* ================================
+   TEXT PORTRAIT EFFECT
+   Image revealed through dense text
+   ================================ */
 
-/* -----------------------------------------------
-   ADJUST BREAKPOINT HERE
-   Change the min-width value in the media query
-   below to control when the mobile-only lock kicks in.
-   Common values:
-     481px  — smartphones only (default)
-     769px  — up to tablets
-     1025px — up to small laptops
-     1281px — up to large desktops
------------------------------------------------ */
-
-/* Base styles — mobile-first, applied on ALL screen sizes */
-body {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     background: #000;
+    overflow-x: hidden;
 }
 
 p {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 12px;
-    line-height: 8px;
+    line-height: 1.35;
+    letter-spacing: 0.02em;
     text-align: justify;
-    -webkit-background-size: cover;
+    word-break: break-word;
+
+    /* Image revealed through text */
+    background: url(image.jpg) no-repeat center top;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background: url(image.jpg) no-repeat center;
     background-attachment: fixed;
+
     -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(225, 225, 255, 0);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    /* Full viewport coverage so text fills entire image */
+    min-height: 100vh;
+    padding: 0;
 }
 
-/* -----------------------------------------------
-   MOBILE-ONLY LOCK
-   Screens wider than 480px show a fallback message.
-   👉 Change "481px" below to adjust the breakpoint.
------------------------------------------------ */
-@media screen and (min-width: 481px) {
-    body * {
-        display: none !important;
-    }
-
-    body::after {
-        display: flex !important;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        font-family: sans-serif;
-        font-size: 18px;
-        color: #fff;
-        content: "This page is optimised for mobile devices.";
+/* ================================
+   TABLET  👉 adjust min/max-width
+   ================================ */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    p {
+        font-size: 13px;
     }
 }
 
-/* -----------------------------------------------
-   TABLET STYLES (optional)
-   Uncomment and set min/max to suit your breakpoint.
------------------------------------------------ */
-/* @media screen and (min-width: 481px) and (max-width: 768px) {
-    body {
-        background: #111;
-    }
+/* ================================
+   DESKTOP  👉 adjust min-width
+   ================================ */
+@media screen and (min-width: 769px) {
     p {
         font-size: 14px;
-        line-height: 1.4;
-    }
-} */
-
-/* -----------------------------------------------
-   DESKTOP STYLES (optional)
-   Uncomment and adjust min-width to suit your needs.
------------------------------------------------ */
-/* @media screen and (min-width: 769px) {
-    body {
-        max-width: 1200px;
+        max-width: 480px;
         margin: 0 auto;
     }
-    p {
-        font-size: 16px;
-        line-height: 1.6;
-    }
-} */
+}
