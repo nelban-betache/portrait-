@@ -8,7 +8,6 @@ p {
     font-size: 12px;
     line-height: 8px;
     text-align: justify;
-    -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
