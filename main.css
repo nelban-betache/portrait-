@@ -1,3 +1,7 @@
+/* =====================
+   Mobile-Only Stylesheet
+   Max width: 480px
+   ===================== */
 
 body {
     margin: 0;
@@ -17,4 +21,22 @@ p {
     background-attachment: fixed;
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgb(225, 225, 255, 0);
+}
+
+/* Hide everything on non-mobile screens */
+@media screen and (min-width: 481px) {
+    body * {
+        display: none !important;
+    }
+
+    body::after {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: sans-serif;
+        font-size: 18px;
+        color: #fff;
+        content: "This page is only available on mobile devices.";
+    }
 }
