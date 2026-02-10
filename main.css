@@ -1,58 +1,19 @@
-/* ================================
-   TEXT PORTRAIT EFFECT
-   Image revealed through dense text
-   ================================ */
-
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
     background: #000;
-    overflow-x: hidden;
 }
 
 p {
-    font-family: 'Courier New', Courier, monospace;
     font-size: 12px;
-    line-height: 1.35;
-    letter-spacing: 0.02em;
+    line-height: 8px;
     text-align: justify;
-    word-break: break-word;
-
-    /* Image revealed through text */
-    background: url(image.jpg) no-repeat center top;
+    -webkit-background-size: cover;
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: url(image.jpg) no-repeat center;
     background-attachment: fixed;
-
     -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-
-    /* Full viewport coverage so text fills entire image */
-    min-height: 100vh;
-    padding: 0;
-}
-
-/* ================================
-   TABLET  👉 adjust min/max-width
-   ================================ */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-    p {
-        font-size: 13px;
-    }
-}
-
-/* ================================
-   DESKTOP  👉 adjust min-width
-   ================================ */
-@media screen and (min-width: 769px) {
-    p {
-        font-size: 14px;
-        max-width: 480px;
-        margin: 0 auto;
-    }
+    -webkit-text-fill-color: rgba(225, 225, 255, 0);
 }
