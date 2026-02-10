@@ -10,6 +10,7 @@ html, body {
 body {
     background: url('ni.jpg') no-repeat center center fixed;
     background-size: cover; /* Make it cover the entire screen */
+    -webkit-background-clip: text; -webkit-text-fill-color: rgba(225, 225, 255, 0);
 }
 
 /* Optional: text on top */
