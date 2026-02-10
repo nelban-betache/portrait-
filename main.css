@@ -7,16 +7,36 @@ html, body {
 }
 
 /* Fullscreen background */
-body {
+/*body {
     background: url('ni.jpg') no-repeat center center fixed;
-    background-size: cover; /* Make it cover the entire screen */
-    -webkit-background-clip: text; -webkit-text-fill-color: rgba(225, 225, 255, 0);
-}
+    background-size: cover; /* Make it cover the entire screen *
 
 /* Optional: text on top */
-p {
+/*p {
     font-size: 12px;
     line-height: 1.2;
     text-align: justify;
     padding: 20px; /* some spacing from edges */
+}
+
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+}
+
+p {
+    font-size: 12px;
+    line-height: 8px;
+    text-align: justify;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: url(ni.jpg) no-repeat center;
+    background-attachment: fixed;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(225, 225, 255, 0);
 }
